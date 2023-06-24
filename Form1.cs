@@ -21,15 +21,15 @@ namespace RKIS_Lab5
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form2AddData form2 = new Form2AddData();
-            form2.Show();
-            Hide();
+            ModelEF modelEF = new ModelEF();
+            studentDataGridView.DataSource = modelEF.Student.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ModelEF modelEF = new ModelEF();
-            studentDataGridView.DataSource = modelEF.Student.ToList();
+            Form2AddData form2 = new Form2AddData();
+            form2.Show();
+            Hide();
         }
 
         private void studentDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
